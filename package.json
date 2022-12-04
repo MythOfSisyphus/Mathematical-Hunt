@@ -1,0 +1,16 @@
+{
+  "name": "math_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./Tailwind.css -o ./Main.css",
+    "watch": "tailwindcss -i ./Tailwind.css -o ./Main.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
