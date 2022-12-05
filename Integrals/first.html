@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Hunt- Integrals</title>
+    <link rel="stylesheet" href="../Main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora&family=Pacifico&family=Permanent+Marker&family=Poppins:wght@300&family=Satisfy&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <!-- Header -->
+    <header class="py-10 bg-black text-white text-center text-3xl">
+        <h1 class="">Mathematical Hunt</h1>
+    </header>
+
+
+    <h1 class="text-2xl mx-5 my-5 font-semibold">
+        Integral of $ \int_0^{\infty} \frac{\cos(x)}{1 + x^2} \mathrm{d}x  $
+    </h1>
+
+    <hr>
+
+    <!-- solution -->
+    <section class="mx-5 my-2" style="font-family: 'Poppins', sans-serif;">
+        <p>We'll solve it using <span>Laplace Transform</span>, so</p>
+        <div>
+            let
+            $$ \mathcal{I} = \int_0^{\infty} \frac{\cos(x)}{1 + x^2} \mathrm{d}x $$
+            And we know that Laplace Transform of $f(t)$ is 
+            $$ \mathcal{L}(f(t)) = \int_0^{\infty} e^{-st} f(t) \mathrm{d}t $$
+            Now let
+            $$ \mathcal{I}(\alpha) = \int_0^{\infty} \frac{\cos(\alpha x)}{1 + x^2} \mathrm{d}x , \hspace{10mm} \mathcal{I}(1) = \mathcal{I} $$
+        </div>
+    </section>
+
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <!-- Configuration of math jax -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'],
+                ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+</body>
+
+</html>
