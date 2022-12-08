@@ -24,23 +24,53 @@
     </header>
 
 
-    <h1 class="text-2xl mx-5 my-5 font-semibold">
-        Integral of $ \int_0^{\infty} \frac{\cos(x)}{1 + x^2} \mathrm{d}x  $
-    </h1>
+    <section class="mx-5 pb-20">
+        <h1 class="text-2xl my-5 font-semibold">
+            Integral of $ \int_0^{\infty} \frac{\cos(x)}{1 + x^2} \mathrm{d}x  $
+        </h1>
+    
+        <hr>
+    
+        <!-- solution -->
+        <section class="my-2" style="font-family: 'Poppins', sans-serif;">
+            <p>We'll solve it using <span>Laplace Transform</span>,</p>
+            <div>
+                let
+                $$ \mathcal{I} = \int_0^{\infty} \frac{\cos(x)}{1 + x^2} \mathrm{d}x $$
+                And we know that Laplace Transform of $f(t)$ is 
+                $$ \mathcal{L}(f(t)) = \int_0^{\infty} e^{-st} f(t) \mathrm{d}t $$
+                Now let
+                <div class="">
+                    $$ \mathcal{I}(\alpha) = \int_0^{\infty} \frac{\cos(\alpha x)}{1 + x^2} \mathrm{d}x $$
+                    $$ \implies \mathcal{I}(1) = \mathcal{I} $$
+                </div>
 
-    <hr>
+                <div class="overflow-x-auto">
+                    \begin{align}
+                        \mathcal{L}(\mathcal{I}(\alpha)) &= \int_0^\infty e^{-s\alpha} \int_0^{\infty} \frac{\cos(\alpha x)}{1 + x^2} \mathrm{d}x \hspace{1mm} \mathrm{d}\alpha \\
+                        &= \int_0^\infty \frac{1}{1 + x^2} \int_0^{\infty} e^{-s\alpha} \cos(\alpha x) \mathrm{d}\alpha \hspace{1mm} \mathrm{d}x \\
+                        &= \int_0^\infty \frac{1}{1 + x^2} \left( \frac{s}{s^2 + x^2} \right) \hspace{1mm} \mathrm{d}x \\
+                        &= \frac{s}{s^2 - 1} \int_0^\infty \left( \frac{1}{1 + x^2} - \frac{1}{s^2 + x^2} \right) \hspace{1mm} \mathrm{d}x \\
+                        &= \frac{s}{s^2 - 1} \left( \tan^{-1}(x) - \frac{1}{s} \tan^{-1}(x/s) \right) \Bigg |_0^\infty \\
+                        &= \frac{s}{s^2 - 1} \left( \frac{\pi}{2} - \frac{\pi}{2s} \right) \\
+                        &= \frac{\pi}{2(s + 1)} \\
+                    \end{align}
+                </div>
 
-    <!-- solution -->
-    <section class="mx-5 my-2" style="font-family: 'Poppins', sans-serif;">
-        <p>We'll solve it using <span>Laplace Transform</span>, so</p>
-        <div>
-            let
-            $$ \mathcal{I} = \int_0^{\infty} \frac{\cos(x)}{1 + x^2} \mathrm{d}x $$
-            And we know that Laplace Transform of $f(t)$ is 
-            $$ \mathcal{L}(f(t)) = \int_0^{\infty} e^{-st} f(t) \mathrm{d}t $$
-            Now let
-            $$ \mathcal{I}(\alpha) = \int_0^{\infty} \frac{\cos(\alpha x)}{1 + x^2} \mathrm{d}x , \hspace{10mm} \mathcal{I}(1) = \mathcal{I} $$
-        </div>
+                <div>
+                    Now taking inverse Laplace Transform
+                </div>
+
+                <div>
+                    $$ \mathcal{I}(\alpha) = \mathcal{L}^{-1}\left( \frac{\pi}{2(s + 1)}  \right) $$
+                    $$ \mathcal{I}(\alpha) = \frac{\pi}{2} e^{-\alpha} $$
+                </div>
+
+                <!-- <div class="overflow-x-auto">
+                    $$ \mathcal{L}(\mathcal{I}(\alpha)) = \int_0^\infty e^{-s\alpha} \int_0^{\infty} \frac{\cos(\alpha x)}{1 + x^2} \mathrm{d}x \mathrm{d}\alpha $$
+                </div> -->
+            </div>
+        </section>
     </section>
 
 
